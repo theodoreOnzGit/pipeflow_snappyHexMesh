@@ -243400,6 +243400,30 @@ internalField   nonuniform List<scalar>
 
 boundaryField
 {
+    topY
+    {
+        type            zeroGradient;
+    }
+    bottomY
+    {
+        type            zeroGradient;
+    }
+    topX
+    {
+        type            zeroGradient;
+    }
+    bottomX
+    {
+        type            zeroGradient;
+    }
+    topZ
+    {
+        type            zeroGradient;
+    }
+    bottomZ
+    {
+        type            zeroGradient;
+    }
     simple_cylinder.stl
     {
         type            zeroGradient;

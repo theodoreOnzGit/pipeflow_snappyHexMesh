@@ -273888,6 +273888,30 @@ internalField   nonuniform List<scalar>
 
 boundaryField
 {
+    topY
+    {
+        type            calculated;
+    }
+    bottomY
+    {
+        type            calculated;
+    }
+    topX
+    {
+        type            calculated;
+    }
+    bottomX
+    {
+        type            calculated;
+    }
+    topZ
+    {
+        type            calculated;
+    }
+    bottomZ
+    {
+        type            calculated;
+    }
     simple_cylinder.stl
     {
         type            calculated;

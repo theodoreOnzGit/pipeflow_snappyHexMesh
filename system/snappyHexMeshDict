@@ -16,7 +16,7 @@ FoamFile
 
 // Which of the steps to run
 castellatedMesh true;
-snap            false;
+snap            true;
 addLayers       false;
 
 
@@ -46,6 +46,7 @@ geometry
 // Settings for the castellatedMesh generation.
 castellatedMeshControls
 {
+
 
     // Refinement parameters
     // ~~~~~~~~~~~~~~~~~~~~~
@@ -196,10 +197,10 @@ snapControls
 
         //- Detect (geometric only) features by sampling the surface
         //  (default=false).
-        implicitFeatureSnap false;
+        implicitFeatureSnap true;
 
         //- Use castellatedMeshControls::features (default = true)
-        explicitFeatureSnap true;
+        explicitFeatureSnap false;
 
         //- Detect points on multiple surfaces (only for explicitFeatureSnap)
         multiRegionFeatureSnap false;
