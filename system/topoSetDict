@@ -1,0 +1,46 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1812                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+    {
+        name    inlet;		// im naming this set of faces i select, inlet, which is the patch i want to name
+        type    faceSet;	// well this is a set of faces we want, otherwise when we want cells, use cellSet
+        action  new;		// here, we are making a new faceSet
+        source  boxToCell;			// how are we selecting a face? i'm going to use boxes here
+        sourceInfo
+	{
+		box (-1.0e-1 -10.000001 -1.0e-5) (1.0e-1 10.000001 20.000001);
+	}
+    }
+/*
+    {
+        name    c1;
+        type    cellSet;
+        action  new;
+        source  cellToCell;
+        set     c0;
+    }
+ 
+    {
+        name    c1;
+        type    cellSet;
+        action  invert;
+    }
+*/
+);
+
+// ************************************************************************* //
