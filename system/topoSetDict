@@ -22,101 +22,149 @@ actions
     
 // Firstly i take the basic patch and turn it into a set of faces.
     {
-	name 	curvedWall;
+	name 	fullCylinderSurface;
 	type	faceSet;
 	action	new;
-	source 	boundaryToFace;
+	source 	patchToFace;
+	sourceInfo
+	{
+	   name "simple_cylinder.stl";
+	}
     }
 
-// the inlet and outlet faces i want to chisel out of the entire cylinder.
-
+// now i want to make the inlet negatives so that i can subtract the faces from the fullCylinderSurface set later
     {
-        name    inlet;
-        type    faceSet;
+        name    inletNegativeCell;
+        type    cellSet;
         action  new;
         source  boxToCell;
         sourceInfo
         {
-                box (-1.0e-1 -10.1 -0.1) (100.1 10.1 20.1);
+                box (1.0e-1 -10.1 -0.1) (100.1 10.1 20.1);
         }
     }
     
     {
+        name    inletNegativeFace;
+        type    faceSet;
+        action  new;
+        source  cellToFace;
+        sourceInfo
+        {
+                set 	inletNegativeCell;
+		option	all;
+        }
+    }
+
+// now i want to do outlet negatives. for purpose of exposure, i'll use cylinderToCell. i'll make the radius 10.1 to ensure all is covered
+    {
+        name    outletNegativeCell;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+	sourceInfo
+        {
+                p1 (-1.0e-1 -0.0 10.0);
+		p2  (99.9 0.0 10.0);
+		radius 10.1;
+        }
+    }
+
+
+    {
+        name    outletNegativeFace;
+        type    faceSet;
+        action  new;
+        source  cellToFace;
+        sourceInfo
+        {
+		set outletNegativeCell;
+		option	all; 
+
+        }
+    }
+
+// now it is time, we can start making the inlet patches
+    {
+	name 	inlet;
+        type    faceSet;
+        action  new;
+        source  faceToFace;
+	sourceInfo
+	{
+		set fullCylinderSurface;
+	}	
+    }
+
+    {
+        name    inlet;
+        type    faceSet;
+        action  delete;
+        source  faceToFace;
+	sourceInfo
+        {
+                set inletNegativeFace;
+        }
+    }
+// and now we can also make the outlet patches
+
+    {
         name    outlet;
         type    faceSet;
         action  new;
-        source  boxToCell;
+        source  faceToFace;
 	sourceInfo
         {
-                box (-1.0e-1 -10.1 -0.1) (100.1 10.1 20.1);
+                set fullCylinderSurface;
         }
     }
-// now i want to make the negatives, the parts i want to subtract from the full thing
 
     {
-	name 	inletNegative;
+        name    outlet;
+        type    faceSet;
+        action  delete;
+        source  faceToFace;
+	sourceInfo
+        {
+                set outletNegativeFace;
+        }
+    }
+// lastly we can have the curved wall segments
+
+ {
+        name    wall;
         type    faceSet;
         action  new;
-        source  sourceInfo;
-		
-    }
-
-
-
-
-
-    {
-        name    inlet;		// im naming this set of faces i select, inlet, which is the patch i want to name
-        type    faceSet;	// well this is a set of faces we want, otherwise when we want cells, use cellSet
-        action  new;		// here, we are making a new faceSet
-        source  boxToCell;			// how are we selecting a face? i'm going to use boxes here
-        sourceInfo
-	{
-		box (-1.0e-1 -10.000001 -1.0e-5) (1.0e-1 10.000001 20.000001);
-		
-	}
-    }
-
-    {
-        name    outlet;          // im naming this set of faces i select, outlet, which is the patch i want to name
-        type    faceSet;        // well this is a set of faces we want, otherwise when we want cells, use cellSet
-        action  new;            // here, we are making a new faceSet
-        source  boxToCell;                      // how are we selecting a face? i'm going to use boxes here
-        sourceInfo
+        source  faceToFace;
+	sourceInfo
         {
-                box (99.9 -10.000001 -1.0e-5) (100.1 10.000001 20.000001);
-		
+                set fullCylinderSurface;
         }
     }
-    {
-        name    wall;    // im naming this set of faces i select, outlet, which is the patch i want to name
-        type    faceSet;        // well this is a set of faces we want, otherwise when we want cells, use cellSet
-        action  new;            // here, we are making a new faceSet
-        source  boxToCell;                      // how are we selecting a face? i'm going to use boxes here
-        sourceInfo
+
+{
+        name    wall;
+        type    faceSet;
+        action  delete;
+        source  faceToFace;
+	sourceInfo
         {
-                box (0.1 -10.000001 -1.0e-5) (99.9 10.000001 20.000001);
-		
+                set outlet;
+        }
+    }
+
+{
+        name    wall;
+        type    faceSet;
+        action  delete;
+        source  faceToFace;
+	sourceInfo
+        {
+                set inlet;
         }
     }
 
 
-
-/*
-    {
-        name    c1;
-        type    cellSet;
-        action  new;
-        source  cellToCell;
-        set     c0;
-    }
- 
-    {
-        name    c1;
-        type    cellSet;
-        action  invert;
-    }
-*/
 );
 
 // ************************************************************************* //

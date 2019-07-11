@@ -1,0 +1,82 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1812                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : v1812 OPENFOAM=1812
+Arch   : "LSB;label=32;scalar=64"
+Exec   : topoSet
+Date   : Jul 11 2019
+Time   : 16:08:42
+Host   : DESKTOP-9S60IA4
+PID    : 2021
+I/O    : uncollated
+Case   : /home/theodore_ong/GitHub_software/pipeflow_snappyHexMesh
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created faceSet fullCylinderSurface
+    Applying source patchToFace
+    Adding all faces of patches 1("simple_cylinder.stl") ...
+    Found matching patch simple_cylinder.stl with 33185 faces.
+    faceSet fullCylinderSurface now size 33185
+Created cellSet inletNegativeCell
+    Applying source boxToCell
+    Adding cells with centre within boxes 1((0.1 -10.1 -0.1) (100.1 10.1 20.1))
+    cellSet inletNegativeCell now size 241756
+Created faceSet inletNegativeFace
+    Applying source cellToFace
+    Adding faces according to cellSet 1(inletNegativeCell)
+    faceSet inletNegativeFace now size 744843
+Created cellSet outletNegativeCell
+    Applying source cylinderToCell
+    Adding cells with centre within cylinder, with p1 = (-0.1 0 10), p2 = (99.9 0 10), radius = 10.1
+    cellSet outletNegativeCell now size 241758
+Created faceSet outletNegativeFace
+    Applying source cellToFace
+    Adding faces according to cellSet 1(outletNegativeCell)
+    faceSet outletNegativeFace now size 744846
+Created faceSet inlet
+    Applying source faceToFace
+    Adding all elements of faceSet 1(fullCylinderSurface)
+    faceSet inlet now size 33185
+Read set faceSet inlet with size 33185
+    Applying source faceToFace
+    Removing all elements of faceSet 1(inletNegativeFace)
+    faceSet inlet now size 2108
+Created faceSet outlet
+    Applying source faceToFace
+    Adding all elements of faceSet 1(fullCylinderSurface)
+    faceSet outlet now size 33185
+Read set faceSet outlet with size 33185
+    Applying source faceToFace
+    Removing all elements of faceSet 1(outletNegativeFace)
+    faceSet outlet now size 2109
+Created faceSet wall
+    Applying source faceToFace
+    Adding all elements of faceSet 1(fullCylinderSurface)
+    faceSet wall now size 33185
+Read set faceSet wall with size 33185
+    Applying source faceToFace
+    Removing all elements of faceSet 1(outlet)
+    faceSet wall now size 31076
+Read set faceSet wall with size 31076
+    Applying source faceToFace
+    Removing all elements of faceSet 1(inlet)
+    faceSet wall now size 28968
+
+End
+

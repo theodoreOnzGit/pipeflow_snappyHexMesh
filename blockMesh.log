@@ -9,9 +9,9 @@ Build  : v1812 OPENFOAM=1812
 Arch   : "LSB;label=32;scalar=64"
 Exec   : blockMesh
 Date   : Jul 11 2019
-Time   : 14:04:30
+Time   : 16:07:22
 Host   : DESKTOP-9S60IA4
-PID    : 1767
+PID    : 2019
 I/O    : uncollated
 Case   : /home/theodore_ong/GitHub_software/pipeflow_snappyHexMesh
 nProcs : 1
@@ -42,8 +42,6 @@ Check topology
 
 Creating block offsets
 Creating merge list .
-Deleting polyMesh directory
-    "/home/theodore_ong/GitHub_software/pipeflow_snappyHexMesh/constant/polyMesh"
 
 Creating polyMesh from blockMesh
 Creating patches

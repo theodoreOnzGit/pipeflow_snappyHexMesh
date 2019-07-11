@@ -1,4 +1,4 @@
-blockMesh > blockMesh.log
-snappyHexMesh -overwrite > snappyHexMesh.log  
-
+blockMesh > blockMesh.log # writes file to blockmesh
+snappyHexMesh -overwrite > snappyHexMesh.log   #i run snappyHexMesh in overwrite mode
+topoSet > topoSet.log
 
