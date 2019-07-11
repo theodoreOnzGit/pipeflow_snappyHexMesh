@@ -16,6 +16,55 @@ FoamFile
 
 actions
 (
+
+// so here i want to make 3 parts of the patch. so i need to chisel out each section from the whole 
+// set of boundary cells, so that's three templates i can chisel out of
+    
+// Firstly i take the basic patch and turn it into a set of faces.
+    {
+	name 	curvedWall;
+	type	faceSet;
+	action	new;
+	source 	boundaryToFace;
+    }
+
+// the inlet and outlet faces i want to chisel out of the entire cylinder.
+
+    {
+        name    inlet;
+        type    faceSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+                box (-1.0e-1 -10.1 -0.1) (100.1 10.1 20.1);
+        }
+    }
+    
+    {
+        name    outlet;
+        type    faceSet;
+        action  new;
+        source  boxToCell;
+	sourceInfo
+        {
+                box (-1.0e-1 -10.1 -0.1) (100.1 10.1 20.1);
+        }
+    }
+// now i want to make the negatives, the parts i want to subtract from the full thing
+
+    {
+	name 	inletNegative;
+        type    faceSet;
+        action  new;
+        source  sourceInfo;
+		
+    }
+
+
+
+
+
     {
         name    inlet;		// im naming this set of faces i select, inlet, which is the patch i want to name
         type    faceSet;	// well this is a set of faces we want, otherwise when we want cells, use cellSet
@@ -24,6 +73,7 @@ actions
         sourceInfo
 	{
 		box (-1.0e-1 -10.000001 -1.0e-5) (1.0e-1 10.000001 20.000001);
+		
 	}
     }
 
@@ -35,6 +85,7 @@ actions
         sourceInfo
         {
                 box (99.9 -10.000001 -1.0e-5) (100.1 10.000001 20.000001);
+		
         }
     }
     {
@@ -45,6 +96,7 @@ actions
         sourceInfo
         {
                 box (0.1 -10.000001 -1.0e-5) (99.9 10.000001 20.000001);
+		
         }
     }
 

@@ -1,0 +1,80 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1812                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : v1812 OPENFOAM=1812
+Arch   : "LSB;label=32;scalar=64"
+Exec   : blockMesh
+Date   : Jul 11 2019
+Time   : 14:04:30
+Host   : DESKTOP-9S60IA4
+PID    : 1767
+I/O    : uncollated
+Case   : /home/theodore_ong/GitHub_software/pipeflow_snappyHexMesh
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from
+    "/home/theodore_ong/GitHub_software/pipeflow_snappyHexMesh/system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+Deleting polyMesh directory
+    "/home/theodore_ong/GitHub_software/pipeflow_snappyHexMesh/constant/polyMesh"
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 1.2 .. 1.2
+        j : 0.3 .. 0.3
+        k : 0.4 .. 0.4
+
+
+There are no merge patch pairs
+
+Writing polyMesh with 0 cellZones
+----------------
+Mesh Information
+----------------
+  boundingBox: (-10 -15 -10) (110 15 30)
+  nPoints: 1030301
+  nCells: 1000000
+  nFaces: 3030000
+  nInternalFaces: 2970000
+----------------
+Patches
+----------------
+  patch 0 (start: 2970000 size: 10000) name: topY
+  patch 1 (start: 2980000 size: 10000) name: bottomY
+  patch 2 (start: 2990000 size: 10000) name: topX
+  patch 3 (start: 3000000 size: 10000) name: bottomX
+  patch 4 (start: 3010000 size: 10000) name: topZ
+  patch 5 (start: 3020000 size: 10000) name: bottomZ
+
+End
+

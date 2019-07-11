@@ -15,43 +15,14 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-6
+1
 (
-    topY
+    simple_cylinder.stl
     {
-        type            patch;
-        nFaces          10000;
-        startFace       2970000;
-    }
-    bottomY
-    {
-        type            patch;
-        nFaces          10000;
-        startFace       2980000;
-    }
-    topX
-    {
-        type            patch;
-        nFaces          10000;
-        startFace       2990000;
-    }
-    bottomX
-    {
-        type            patch;
-        nFaces          10000;
-        startFace       3000000;
-    }
-    topZ
-    {
-        type            patch;
-        nFaces          10000;
-        startFace       3010000;
-    }
-    bottomZ
-    {
-        type            patch;
-        nFaces          10000;
-        startFace       3020000;
+        type            wall;
+        inGroups        1(wall);
+        nFaces          33185;
+        startFace       715352;
     }
 )
 
