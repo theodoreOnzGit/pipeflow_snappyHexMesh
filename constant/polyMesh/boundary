@@ -15,14 +15,25 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-1
+3
 (
-    simple_cylinder.stl
+    wall
     {
-        type            wall;
-        inGroups        1(wall);
-        nFaces          33185;
+        type            patch;
+        nFaces          28968;
         startFace       715352;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          2108;
+        startFace       744320;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          2109;
+        startFace       746428;
     }
 )
 
