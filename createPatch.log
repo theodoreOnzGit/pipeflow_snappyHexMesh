@@ -9,9 +9,9 @@ Build  : v1812 OPENFOAM=1812
 Arch   : "LSB;label=32;scalar=64"
 Exec   : createPatch -overwrite
 Date   : Jul 11 2019
-Time   : 16:19:56
+Time   : 16:56:29
 Host   : DESKTOP-9S60IA4
-PID    : 2046
+PID    : 2337
 I/O    : uncollated
 Case   : /home/theodore_ong/GitHub_software/pipeflow_snappyHexMesh
 nProcs : 1
@@ -26,7 +26,35 @@ Create polyMesh for time = 0
 
 Reading "system/createPatchDict"
 
-Patch 'wall' already exists.  Only moving patch faces - type will remain the same
-Patch 'inlet' already exists.  Only moving patch faces - type will remain the same
-Patch 'outlet' already exists.  Only moving patch faces - type will remain the same
+Adding new patch wall as patch 1 from 
+{
+    type            patch;
+}
+
+Adding new patch inlet as patch 2 from 
+{
+    type            patch;
+}
+
+Adding new patch outlet as patch 3 from 
+{
+    type            patch;
+}
+
+
+Read 14560 faces from faceSet wall
+Read 9300 faces from faceSet inlet
+Read 9325 faces from faceSet outlet
+
+Doing topology modification to order faces.
+
+Not synchronising points.
+
+Removing patches with no faces in them.
+
+Removing zero-sized patch simple_cylinder.stl type wall at position 0
+Removing patches.
+Writing repatched mesh to 0
+
+End
 

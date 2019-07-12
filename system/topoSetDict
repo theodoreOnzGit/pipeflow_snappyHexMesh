@@ -40,7 +40,7 @@ actions
         source  boxToCell;
         sourceInfo
         {
-                box (1.0e-1 -10.1 -0.1) (100.1 10.1 20.1);
+                box (7.0e-1 -10.1 -0.1) (105.1 10.1 20.1);
         }
     }
     
@@ -64,8 +64,8 @@ actions
         source  cylinderToCell;
 	sourceInfo
         {
-                p1 (-1.0e-1 -0.0 10.0);
-		p2  (99.9 0.0 10.0);
+                p1 (-5.0 -0.0 10.0);
+		p2  (99.3 0.0 10.0);
 		radius 10.1;
         }
     }

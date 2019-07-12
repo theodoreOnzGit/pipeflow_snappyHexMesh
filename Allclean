@@ -3,4 +3,4 @@ cd ${0%/*} || exit 1                        # Run from this directory
 . $WM_PROJECT_DIR/bin/tools/CleanFunctions  # Tutorial clean functions
 
 cleanCase
-
+rm -r blockMesh.log topoSet.log createPatch.log snappyHexMesh.log

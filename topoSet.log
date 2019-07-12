@@ -9,9 +9,9 @@ Build  : v1812 OPENFOAM=1812
 Arch   : "LSB;label=32;scalar=64"
 Exec   : topoSet
 Date   : Jul 11 2019
-Time   : 16:08:42
+Time   : 16:56:25
 Host   : DESKTOP-9S60IA4
-PID    : 2021
+PID    : 2336
 I/O    : uncollated
 Case   : /home/theodore_ong/GitHub_software/pipeflow_snappyHexMesh
 nProcs : 1
@@ -35,20 +35,20 @@ Created faceSet fullCylinderSurface
     faceSet fullCylinderSurface now size 33185
 Created cellSet inletNegativeCell
     Applying source boxToCell
-    Adding cells with centre within boxes 1((0.1 -10.1 -0.1) (100.1 10.1 20.1))
-    cellSet inletNegativeCell now size 241756
+    Adding cells with centre within boxes 1((0.7 -10.1 -0.1) (105.1 10.1 20.1))
+    cellSet inletNegativeCell now size 230550
 Created faceSet inletNegativeFace
     Applying source cellToFace
     Adding faces according to cellSet 1(inletNegativeCell)
-    faceSet inletNegativeFace now size 744843
+    faceSet inletNegativeFace now size 707971
 Created cellSet outletNegativeCell
     Applying source cylinderToCell
-    Adding cells with centre within cylinder, with p1 = (-0.1 0 10), p2 = (99.9 0 10), radius = 10.1
-    cellSet outletNegativeCell now size 241758
+    Adding cells with centre within cylinder, with p1 = (-5 0 10), p2 = (99.3 0 10), radius = 10.1
+    cellSet outletNegativeCell now size 230462
 Created faceSet outletNegativeFace
     Applying source cellToFace
     Adding faces according to cellSet 1(outletNegativeCell)
-    faceSet outletNegativeFace now size 744846
+    faceSet outletNegativeFace now size 707710
 Created faceSet inlet
     Applying source faceToFace
     Adding all elements of faceSet 1(fullCylinderSurface)
@@ -56,7 +56,7 @@ Created faceSet inlet
 Read set faceSet inlet with size 33185
     Applying source faceToFace
     Removing all elements of faceSet 1(inletNegativeFace)
-    faceSet inlet now size 2108
+    faceSet inlet now size 9300
 Created faceSet outlet
     Applying source faceToFace
     Adding all elements of faceSet 1(fullCylinderSurface)
@@ -64,7 +64,7 @@ Created faceSet outlet
 Read set faceSet outlet with size 33185
     Applying source faceToFace
     Removing all elements of faceSet 1(outletNegativeFace)
-    faceSet outlet now size 2109
+    faceSet outlet now size 9325
 Created faceSet wall
     Applying source faceToFace
     Adding all elements of faceSet 1(fullCylinderSurface)
@@ -72,11 +72,11 @@ Created faceSet wall
 Read set faceSet wall with size 33185
     Applying source faceToFace
     Removing all elements of faceSet 1(outlet)
-    faceSet wall now size 31076
-Read set faceSet wall with size 31076
+    faceSet wall now size 23860
+Read set faceSet wall with size 23860
     Applying source faceToFace
     Removing all elements of faceSet 1(inlet)
-    faceSet wall now size 28968
+    faceSet wall now size 14560
 
 End
 
