@@ -1,17 +1,17 @@
 /*---------------------------------------------------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  v1812                                 |
+|  \\    /   O peration     | Version:  v1906                                 |
 |   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-Build  : v1812 OPENFOAM=1812
+Build  : v1906 OPENFOAM=1906
 Arch   : "LSB;label=32;scalar=64"
 Exec   : blockMesh
-Date   : Jul 11 2019
-Time   : 16:55:10
+Date   : Jul 17 2019
+Time   : 14:09:45
 Host   : DESKTOP-9S60IA4
-PID    : 2334
+PID    : 4063
 I/O    : uncollated
 Case   : /home/theodore_ong/GitHub_software/pipeflow_snappyHexMesh
 nProcs : 1
@@ -22,8 +22,7 @@ allowSystemOperations : Allowing user-supplied system call operations
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
-Creating block mesh from
-    "/home/theodore_ong/GitHub_software/pipeflow_snappyHexMesh/system/blockMeshDict"
+Creating block mesh from "system/blockMeshDict"
 Creating block edges
 No non-planar block faces defined
 Creating topology blocks
